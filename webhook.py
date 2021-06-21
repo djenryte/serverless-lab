@@ -15,6 +15,7 @@ logger.handlers[0].setFormatter(logging.Formatter('[%(asctime)s][%(levelname)s] 
 # on master. In a larger environment you might have different functions of logic
 # depending on the branch that you were receiving a webhook for.
 #
+# 
 branch_name = "main"
 
 # This can be named whatever you want but a descriptive name is best if re-using functions
@@ -82,7 +83,7 @@ def post(event, context):
             computed_signature = '='.join(['sha1', computed_hash.hexdigest()])
             if hmac.compare_digest(computed_signature.encode('ascii'), signature.encode('ascii')):
                 secure = True
-    if secure == False:ls
+    if secure == False:
         raise Exception('Failed to validate authenticity of webhook message')
     
     repo_name = full_name + '/branch/' + branch_name
