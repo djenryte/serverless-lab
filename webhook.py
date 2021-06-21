@@ -14,7 +14,7 @@ logger.handlers[0].setFormatter(logging.Formatter('[%(asctime)s][%(levelname)s] 
 # In a real implementation this would be dynamic but we know we are only triggering
 # on master. In a larger environment you might have different functions of logic
 # depending on the branch that you were receiving a webhook for.
-branch_name = "master"
+branch_name = "main"
 
 # This can be named whatever you want but a descriptive name is best if re-using functions
 # A common pattern is to use the matching HTTP verb for a RESTful API
